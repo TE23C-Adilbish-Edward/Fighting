@@ -2,15 +2,15 @@
 
 int hjälteHp = 100;
 int skurkHp = 100;
-
-Console.WriteLine("Peter och Kalle bråkar på skolgården, tryck på valfri knapp för att fortsätta");
+int slag = 1;
+Console.WriteLine("Peter och Kalle bråkar på skolgården och det bryter ut ett slagsmål, tryck på valfri knapp för att fortsätta");
 Console.ReadKey();
 
 while(hjälteHp > 0 && skurkHp > 0)
 {
-    Console.WriteLine("\n----- ===== NY RUNDA ===== -----");
-    Console.WriteLine($"Peter: {hjälteHp}  Kalle: {skurkHp}\n");
-
+    Console.WriteLine($"\n----- ===== SLAG {slag} ===== -----");
+    Console.WriteLine($"Peter: {hjälteHp} HP  Kalle: {skurkHp} HP\n");
+    slag += 1;
     int hjälteskada = Random.Shared.Next(20);
 
 if (hjälteskada == 0)
@@ -39,7 +39,7 @@ else
    } 
 }
 
-Console.WriteLine("\n----- ===== STRIDEN ÄR SLUT ===== -----");
+Console.WriteLine("\n----- ===== SLAGSMÅLET ÄR SLUT ===== -----");
 
 if (hjälteHp == 0 && skurkHp == 0)
 {
